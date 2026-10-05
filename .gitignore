@@ -1,0 +1,4 @@
+node_modules/
+dist/
+personal-space/dist/
+.DS_Store
