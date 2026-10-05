@@ -24,7 +24,8 @@
       var w = window.innerWidth || document.documentElement.clientWidth;
       if (w > 800) {
         var scale = Math.min(1, w / 1920);
-        document.write('<style id="pre-zoom">#page{zoom:' + scale + ' !important;}</style>');
+        var heroH = (window.innerHeight || document.documentElement.clientHeight) / scale;
+        document.write('<style id="pre-zoom">#page{zoom:' + scale + ' !important;--hero-h:' + heroH + 'px;}</style>');
       }
     })();
   </script>

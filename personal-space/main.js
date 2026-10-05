@@ -29,12 +29,18 @@ import { animate, inView, stagger, scroll } from "motion";
     const preZoom = document.getElementById("pre-zoom");
     if (clientWidth <= MOBILE_BREAKPOINT) {
       page.style.zoom = "";
+      page.style.removeProperty("--hero-h");
       if (preZoom) preZoom.remove();
     } else {
       const scale = Math.min(1, clientWidth / DESIGN_WIDTH);
+      // Viewport height in design px: once zoomed, the hero is exactly 100vh tall.
+      const heroH =
+        (window.innerHeight || document.documentElement.clientHeight) / scale;
       page.style.zoom = scale === 1 ? "" : String(scale);
+      page.style.setProperty("--hero-h", heroH + "px");
       if (preZoom) {
-        preZoom.textContent = "#page { zoom: " + scale + " !important; }";
+        preZoom.textContent =
+          "#page { zoom: " + scale + " !important; --hero-h: " + heroH + "px; }";
       }
     }
     if (lenis) lenis.resize();
