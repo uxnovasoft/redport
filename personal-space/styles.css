@@ -1094,66 +1094,82 @@ img {
   width: 100%;
 }
 
-/* v3/Service Card */
+/* v3/Service Card - Figma 4309:4313 Design */
 .service {
   display: flex;
   flex: 1 0 0;
   flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-24);
+  justify-content: space-between;
   min-width: 0;
-  height: 379px;
-  padding: var(--space-48);
+  height: 562px;
   border-radius: var(--radius-lg);
   background: var(--color-bg-subtle);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.service--highlight {
-  background: var(--color-brand-red-strong);
+.service:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15, 13, 13, 0.08);
 }
 
-.service__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.service__media {
+  position: relative;
   width: 100%;
+  height: 380px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-.service__index {
-  font: 600 18px/1.2 var(--font-sans);
-  color: var(--color-brand-red);
-  white-space: nowrap;
+.service__media::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 140px;
+  background: linear-gradient(180deg, rgba(246, 243, 242, 0) 0%, var(--color-bg-subtle) 100%);
+  pointer-events: none;
 }
 
-.service .arrow {
-  width: 56px;
-  height: 56px;
-  background: var(--color-bg-dark);
+.service__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service:hover .service__img {
+  transform: scale(1.03);
+}
+
+.service__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 30px 32px 30px;
+  position: relative;
+  z-index: 2;
 }
 
 .service__title {
   font: 400 56px/1.15 var(--font-serif);
   letter-spacing: -0.56px;
   color: var(--color-text-primary);
+  margin: 0;
 }
 
 .service__desc {
   font: 400 18px/1.55 var(--font-sans);
   letter-spacing: -0.036px;
   color: var(--color-text-secondary);
-}
-
-.service--highlight .service__index,
-.service--highlight .service__title {
-  color: var(--color-text-on-dark);
-}
-
-.service--highlight .service__desc {
-  color: var(--color-text-on-red-secondary);
-}
-
-.service--highlight .arrow {
-  background: var(--color-bg-page);
+  margin: 0;
+  max-width: 585px;
 }
 
 /* ==========================================================================
@@ -2140,13 +2156,22 @@ img {
   .service {
     width: 100% !important;
     height: auto !important;
-    min-height: 320px !important;
-    padding: 32px 24px !important;
+    min-height: auto !important;
+    padding: 0 0 28px 0 !important;
     border-radius: 28px !important;
   }
 
+  .service__media {
+    height: clamp(220px, 48vw, 320px) !important;
+  }
+
+  .service__body {
+    padding: 16px 20px 0 !important;
+    gap: 8px !important;
+  }
+
   .service__title {
-    font-size: clamp(36px, 10vw, 44px) !important;
+    font-size: clamp(32px, 8vw, 44px) !important;
     letter-spacing: -0.4px !important;
   }
 
