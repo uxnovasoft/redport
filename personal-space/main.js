@@ -3,8 +3,6 @@ import "lenis/dist/lenis.css";
 import { animate, inView, stagger, scroll } from "motion";
 
 (() => {
-  const DESIGN_WIDTH = 1920;
-  const MOBILE_BREAKPOINT = 800;
   const page = document.getElementById("page");
 
   const prefersReducedMotion = window.matchMedia(
@@ -22,31 +20,29 @@ import { animate, inView, stagger, scroll } from "motion";
     smoothWheel: !prefersReducedMotion,
   });
 
-  // Responsive scaling
-  function fit() {
-    const clientWidth =
-      document.documentElement.clientWidth || window.innerWidth;
-    const preZoom = document.getElementById("pre-zoom");
-    if (clientWidth <= MOBILE_BREAKPOINT) {
-      page.style.zoom = "";
-      page.style.removeProperty("--hero-h");
-      if (preZoom) preZoom.remove();
-    } else {
-      const scale = Math.min(1, clientWidth / DESIGN_WIDTH);
-      // Viewport height in design px: once zoomed, the hero is exactly 100vh tall.
-      const heroH =
-        (window.innerHeight || document.documentElement.clientHeight) / scale;
-      page.style.zoom = scale === 1 ? "" : String(scale);
-      page.style.setProperty("--hero-h", heroH + "px");
-      if (preZoom) {
-        preZoom.textContent =
-          "#page { zoom: " + scale + " !important; --hero-h: " + heroH + "px; }";
-      }
-    }
+  // Responsive handling for smooth scroll
+  window.addEventListener("resize", () => {
     if (lenis) lenis.resize();
+  });
+
+  // Dynamic scale factor for service card previews (645x380 base frame)
+  const serviceMediaList = document.querySelectorAll(".service__media");
+  if (serviceMediaList.length > 0) {
+    const updateCardScales = () => {
+      serviceMediaList.forEach((el) => {
+        const w = el.getBoundingClientRect().width;
+        if (w > 0) {
+          el.style.setProperty("--c-scale", (w / 645).toFixed(4));
+        }
+      });
+    };
+    updateCardScales();
+    window.addEventListener("resize", updateCardScales);
+    if (typeof ResizeObserver !== "undefined") {
+      const ro = new ResizeObserver(updateCardScales);
+      serviceMediaList.forEach((el) => ro.observe(el));
+    }
   }
-  fit();
-  window.addEventListener("resize", fit);
 
   // =========================================================================
   // 2. Mobile Navigation Drawer
