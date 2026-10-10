@@ -13,7 +13,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,0,1&family=Geist+Mono:wght@500&family=Inter:wght@400;500;600&family=Instrument+Sans:wdth,wght@75..100,700&family=Playfair+Display:wght@400&family=Schibsted+Grotesk:wght@700&family=Space+Grotesk:wght@700&family=Splash&display=swap"
     rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/Hero BG.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/Hero BG Mobile.png" media="(max-width: 991px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/Hero BG.png" media="(min-width: 992px)" fetchpriority="high" />
   <link rel="stylesheet" href="styles.css" />
   <script>
     document.documentElement.classList.add("js");
@@ -49,7 +50,10 @@
     <!-- ============================== HERO ============================== -->
     <section class="hero" id="top">
       <div class="hero__bg">
-        <img src="assets/Hero BG.png" alt="BG" width="1920" height="960" fetchpriority="high" decoding="sync" />
+        <picture>
+          <source media="(max-width: 991px)" srcset="assets/Hero BG Mobile.png" />
+          <img src="assets/Hero BG.png" alt="BG" width="1920" height="960" fetchpriority="high" decoding="sync" />
+        </picture>
       </div>
 
       <div class="hero__body">
@@ -70,15 +74,6 @@
             </svg>
           </a>
         </div>
-      </div>
-
-      <div class="hero__footer hero-in">
-        <div class="hero__availability">
-          <img src="assets/dot.svg" alt="" />
-          <p>Available for new projects <span class="hero__avail-sub">— Oct 2026</span></p>
-        </div>
-        <p class="hero__scroll">Scroll to explore ↓</p>
-        <p class="hero__role">UI/UX &amp; Product Designer</p>
       </div>
     </section>
 
@@ -351,19 +346,23 @@
                       <span class="web-figma-browser-dot web-figma-browser-dot--dark" data-node-id="4309:4330"></span>
                     </div>
                     <div class="web-figma-browser-nav" data-node-id="4309:4336">
-                      <img class="web-figma-browser-logo" src="assets/figma-nav-logo.svg" alt="" data-node-id="4309:4337" />
+                      <img class="web-figma-browser-logo" src="assets/figma-nav-logo.svg" alt=""
+                        data-node-id="4309:4337" />
                       <div class="web-figma-browser-links" data-node-id="4309:4341">
                         <span data-node-id="4309:4342">Home</span>
                         <span data-node-id="4309:4343">About</span>
                         <span data-node-id="4309:4344">Contact</span>
                       </div>
                       <div class="web-figma-browser-btn" data-node-id="4309:4345">
-                        <img class="web-figma-browser-btn-icon" src="assets/6cfee256acca9b5aaafb86ac90cb8b61f996c4c7.svg" alt="" />
+                        <img class="web-figma-browser-btn-icon"
+                          src="assets/6cfee256acca9b5aaafb86ac90cb8b61f996c4c7.svg" alt="" />
                       </div>
                     </div>
                     <div class="web-figma-browser-canvas" data-node-id="4309:4331">
-                      <img class="web-figma-browser-ribbon" src="assets/figma-canvas-ribbon.png" alt="" data-node-id="4309:4332" />
-                      <img class="web-figma-browser-wave" src="assets/figma-web-canvas-wave.svg" alt="" data-node-id="4309:4333" />
+                      <img class="web-figma-browser-ribbon" src="assets/figma-canvas-ribbon.png" alt=""
+                        data-node-id="4309:4332" />
+                      <img class="web-figma-browser-wave" src="assets/figma-web-canvas-wave.svg" alt=""
+                        data-node-id="4309:4333" />
                     </div>
                   </div>
 
@@ -373,13 +372,15 @@
                       <span class="web-figma-mobile-dot" data-node-id="4309:4358"></span>
                       <span class="web-figma-mobile-pill" data-node-id="4309:4359"></span>
                     </div>
-                    <img class="web-figma-mobile-logo" src="assets/figma-mobile-logo.svg" alt="" data-node-id="4309:4360" />
+                    <img class="web-figma-mobile-logo" src="assets/figma-mobile-logo.svg" alt=""
+                      data-node-id="4309:4360" />
                     <div class="web-figma-mobile-line web-figma-mobile-line--1" data-node-id="4309:4363"></div>
                     <div class="web-figma-mobile-line web-figma-mobile-line--2" data-node-id="4309:4364"></div>
                     <div class="web-figma-mobile-line web-figma-mobile-line--3" data-node-id="4309:4365"></div>
                     <div class="web-figma-mobile-line web-figma-mobile-line--4" data-node-id="4309:4366"></div>
                     <div class="web-figma-mobile-btn" data-node-id="4309:4367">
-                      <img class="web-figma-mobile-btn-icon" src="assets/6cfee256acca9b5aaafb86ac90cb8b61f996c4c7.svg" alt="" />
+                      <img class="web-figma-mobile-btn-icon" src="assets/6cfee256acca9b5aaafb86ac90cb8b61f996c4c7.svg"
+                        alt="" />
                     </div>
                   </div>
 
@@ -419,19 +420,23 @@
                       <span class="web-figma-browser-dot web-figma-browser-dot--dark" data-node-id="4309:4387"></span>
                     </div>
                     <div class="web-figma-browser-nav" data-node-id="4309:4393">
-                      <img class="web-figma-browser-logo" src="assets/figma-nav-logo.svg" alt="" data-node-id="4309:4394" />
+                      <img class="web-figma-browser-logo" src="assets/figma-nav-logo.svg" alt=""
+                        data-node-id="4309:4394" />
                       <div class="web-figma-browser-links" data-node-id="4309:4398">
                         <span data-node-id="4309:4399">Home</span>
                         <span data-node-id="4309:4400">About</span>
                         <span data-node-id="4309:4401">Contact</span>
                       </div>
                       <div class="web-figma-browser-btn" data-node-id="4309:4402">
-                        <img class="web-figma-browser-btn-icon" src="assets/6cfee256acca9b5aaafb86ac90cb8b61f996c4c7.svg" alt="" />
+                        <img class="web-figma-browser-btn-icon"
+                          src="assets/6cfee256acca9b5aaafb86ac90cb8b61f996c4c7.svg" alt="" />
                       </div>
                     </div>
                     <div class="web-figma-browser-canvas" data-node-id="4309:4388">
-                      <img class="web-figma-browser-ribbon" src="assets/figma-canvas-ribbon.png" alt="" data-node-id="4309:4389" />
-                      <img class="web-figma-browser-wave" src="assets/figma-web-canvas-wave.svg" alt="" data-node-id="4309:4390" />
+                      <img class="web-figma-browser-ribbon" src="assets/figma-canvas-ribbon.png" alt=""
+                        data-node-id="4309:4389" />
+                      <img class="web-figma-browser-wave" src="assets/figma-web-canvas-wave.svg" alt=""
+                        data-node-id="4309:4390" />
                     </div>
                   </div>
 
@@ -441,13 +446,15 @@
                       <span class="web-figma-mobile-dot" data-node-id="4309:4415"></span>
                       <span class="web-figma-mobile-pill" data-node-id="4309:4416"></span>
                     </div>
-                    <img class="web-figma-mobile-logo" src="assets/figma-mobile-logo.svg" alt="" data-node-id="4309:4417" />
+                    <img class="web-figma-mobile-logo" src="assets/figma-mobile-logo.svg" alt=""
+                      data-node-id="4309:4417" />
                     <div class="web-figma-mobile-line web-figma-mobile-line--1" data-node-id="4309:4420"></div>
                     <div class="web-figma-mobile-line web-figma-mobile-line--2" data-node-id="4309:4421"></div>
                     <div class="web-figma-mobile-line web-figma-mobile-line--3" data-node-id="4309:4422"></div>
                     <div class="web-figma-mobile-line web-figma-mobile-line--4" data-node-id="4309:4423"></div>
                     <div class="web-figma-mobile-btn" data-node-id="4309:4424">
-                      <img class="web-figma-mobile-btn-icon" src="assets/6cfee256acca9b5aaafb86ac90cb8b61f996c4c7.svg" alt="" />
+                      <img class="web-figma-mobile-btn-icon" src="assets/6cfee256acca9b5aaafb86ac90cb8b61f996c4c7.svg"
+                        alt="" />
                     </div>
                   </div>
 
@@ -489,19 +496,23 @@
                       <span class="web-figma-browser-dot web-figma-browser-dot--dark" data-node-id="4309:4445"></span>
                     </div>
                     <div class="web-figma-browser-nav" data-node-id="4309:4451">
-                      <img class="web-figma-browser-logo" src="assets/figma-nav-logo.svg" alt="" data-node-id="4309:4452" />
+                      <img class="web-figma-browser-logo" src="assets/figma-nav-logo.svg" alt=""
+                        data-node-id="4309:4452" />
                       <div class="web-figma-browser-links" data-node-id="4309:4456">
                         <span data-node-id="4309:4457">Home</span>
                         <span data-node-id="4309:4458">About</span>
                         <span data-node-id="4309:4459">Contact</span>
                       </div>
                       <div class="web-figma-browser-btn" data-node-id="4309:4460">
-                        <img class="web-figma-browser-btn-icon" src="assets/6cfee256acca9b5aaafb86ac90cb8b61f996c4c7.svg" alt="" />
+                        <img class="web-figma-browser-btn-icon"
+                          src="assets/6cfee256acca9b5aaafb86ac90cb8b61f996c4c7.svg" alt="" />
                       </div>
                     </div>
                     <div class="web-figma-browser-canvas" data-node-id="4309:4446">
-                      <img class="web-figma-browser-ribbon" src="assets/figma-canvas-ribbon.png" alt="" data-node-id="4309:4447" />
-                      <img class="web-figma-browser-wave" src="assets/figma-web-canvas-wave.svg" alt="" data-node-id="4309:4448" />
+                      <img class="web-figma-browser-ribbon" src="assets/figma-canvas-ribbon.png" alt=""
+                        data-node-id="4309:4447" />
+                      <img class="web-figma-browser-wave" src="assets/figma-web-canvas-wave.svg" alt=""
+                        data-node-id="4309:4448" />
                     </div>
                   </div>
 
@@ -511,13 +522,15 @@
                       <span class="web-figma-mobile-dot" data-node-id="4309:4473"></span>
                       <span class="web-figma-mobile-pill" data-node-id="4309:4474"></span>
                     </div>
-                    <img class="web-figma-mobile-logo" src="assets/figma-mobile-logo.svg" alt="" data-node-id="4309:4475" />
+                    <img class="web-figma-mobile-logo" src="assets/figma-mobile-logo.svg" alt=""
+                      data-node-id="4309:4475" />
                     <div class="web-figma-mobile-line web-figma-mobile-line--1" data-node-id="4309:4478"></div>
                     <div class="web-figma-mobile-line web-figma-mobile-line--2" data-node-id="4309:4479"></div>
                     <div class="web-figma-mobile-line web-figma-mobile-line--3" data-node-id="4309:4480"></div>
                     <div class="web-figma-mobile-line web-figma-mobile-line--4" data-node-id="4309:4481"></div>
                     <div class="web-figma-mobile-btn" data-node-id="4309:4482">
-                      <img class="web-figma-mobile-btn-icon" src="assets/6cfee256acca9b5aaafb86ac90cb8b61f996c4c7.svg" alt="" />
+                      <img class="web-figma-mobile-btn-icon" src="assets/6cfee256acca9b5aaafb86ac90cb8b61f996c4c7.svg"
+                        alt="" />
                     </div>
                   </div>
 
@@ -578,12 +591,18 @@
                   <p class="brand-figma-type-item brand-figma-type-item--button" data-node-id="4326:4599">Button</p>
                   <p class="brand-figma-type-item brand-figma-type-item--caption" data-node-id="4326:4600">Caption</p>
 
-                  <img class="brand-figma-line brand-figma-line--1" src="assets/figma-brand-line-1.svg" alt="" data-node-id="4326:4615" />
-                  <img class="brand-figma-line brand-figma-line--2" src="assets/figma-brand-line-2.svg" alt="" data-node-id="4326:4616" />
-                  <img class="brand-figma-line brand-figma-line--3" src="assets/figma-brand-line-3.svg" alt="" data-node-id="4326:4617" />
-                  <img class="brand-figma-line brand-figma-line--4" src="assets/figma-brand-line-4.svg" alt="" data-node-id="4326:4618" />
-                  <img class="brand-figma-line brand-figma-line--5" src="assets/figma-brand-line-5.svg" alt="" data-node-id="4326:4619" />
-                  <img class="brand-figma-line brand-figma-line--6" src="assets/figma-brand-line-6.svg" alt="" data-node-id="4326:4620" />
+                  <img class="brand-figma-line brand-figma-line--1" src="assets/figma-brand-line-1.svg" alt=""
+                    data-node-id="4326:4615" />
+                  <img class="brand-figma-line brand-figma-line--2" src="assets/figma-brand-line-2.svg" alt=""
+                    data-node-id="4326:4616" />
+                  <img class="brand-figma-line brand-figma-line--3" src="assets/figma-brand-line-3.svg" alt=""
+                    data-node-id="4326:4617" />
+                  <img class="brand-figma-line brand-figma-line--4" src="assets/figma-brand-line-4.svg" alt=""
+                    data-node-id="4326:4618" />
+                  <img class="brand-figma-line brand-figma-line--5" src="assets/figma-brand-line-5.svg" alt=""
+                    data-node-id="4326:4619" />
+                  <img class="brand-figma-line brand-figma-line--6" src="assets/figma-brand-line-6.svg" alt=""
+                    data-node-id="4326:4620" />
 
                   <!-- Gradient Fade at bottom -->
                   <div class="service__fade" data-node-id="4326:4621"></div>
